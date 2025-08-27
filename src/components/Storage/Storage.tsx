@@ -1,5 +1,6 @@
-import { FaCog, FaSignOutAlt, FaUser } from "react-icons/fa";
+import { FaCog, FaRegUserCircle, FaSignOutAlt} from "react-icons/fa";
 import "./Storage.scss";
+import Chart from "../Chart/Chart";
 
 function Storage() {
   return (
@@ -12,8 +13,16 @@ function Storage() {
 
         <span className="storage_header_avatar">
           <p>Name</p>
-          <FaUser className="storage_header_avatar_icon" />
+          <FaRegUserCircle className="storage_header_avatar_icon" />
         </span>
+      </div>
+
+      <div className="storage_container">
+        <h1 className="storage_container_title">Storage</h1>
+        <div className="storage_container_chart">
+          <Chart />
+          <p className="storage_container_chart_label">420.2 GB of 500 GB used</p>
+        </div>
       </div>
     </div>
   );

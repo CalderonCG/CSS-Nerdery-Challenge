@@ -1,0 +1,42 @@
+@use "../../styles/global" as *;
+
+.chart {
+  position: relative;
+
+  svg {
+    display: block;
+  }
+
+  .chart_used {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    gap: 0.2rem;
+    color: #3a471b;
+
+    &_percentage {
+      color: var(--font);
+      font-size: 2rem;
+      font-weight: 400;
+
+      &_symbol{
+        font-size: 1.5rem;
+      }
+    }
+
+    &_label{
+        color: var(--secondary_font);
+        font-weight: 400;
+    }
+  }
+}
