@@ -8,7 +8,7 @@
   &_header {
     display: flex;
     height: clamp(42px, 15%, 80px);
-    border-bottom: 1px solid var(--font);
+    border-bottom: 1px solid #E0E7F1;
     padding: 32px 36px;
     justify-content: space-between;
 
@@ -41,7 +41,6 @@
     &_title{
       font-weight: 400;
       color: var(--font);
-      font-size: 24px
     }
 
     &_chart {

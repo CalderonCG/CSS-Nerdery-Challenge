@@ -1,19 +1,15 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import "./Chart.scss";
+import type { DataType } from "../Storage/Storage";
 
-type DataType = {
-  name: string;
-  value: number;
-};
-const data: DataType[] = [
-  { name: "Files", value: 200 },
-  { name: "Videos", value: 125 },
-  { name: "Pictures", value: 75 },
-  { name: "Available", value: 50 },
-];
 
-function Chart() {
+
+type ChartProps = {
+  data: DataType[]
+}
+
+function Chart({data}: ChartProps) {
   //Chart setup--------------------------------------------------------------------------------------------
   const chartRef = useRef<SVGSVGElement | null>(null); // Reference for chart
 
@@ -53,7 +49,7 @@ function Chart() {
           ? "#4AC29D"
           : "#BCBECA"
       );
-  }, []);
+  }, [data]);
 
   return (
     <div className="chart">

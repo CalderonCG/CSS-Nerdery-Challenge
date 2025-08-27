@@ -1,6 +1,19 @@
-import { FaCog, FaRegUserCircle, FaSignOutAlt} from "react-icons/fa";
+import { FaCog, FaRegUserCircle, FaSignOutAlt } from "react-icons/fa";
 import "./Storage.scss";
 import Chart from "../Chart/Chart";
+import FileTypeCard from "../FileTypeCard/FileTypeCard";
+
+export type DataType = {
+  name: string;
+  value: number;
+};
+
+const data: DataType[] = [
+  { name: "Files", value: 200 },
+  { name: "Videos", value: 125  },
+  { name: "Pictures", value: 75  },
+  { name: "Available", value: 50  },
+];
 
 function Storage() {
   return (
@@ -20,8 +33,16 @@ function Storage() {
       <div className="storage_container">
         <h1 className="storage_container_title">Storage</h1>
         <div className="storage_container_chart">
-          <Chart />
-          <p className="storage_container_chart_label">420.2 GB of 500 GB used</p>
+          <Chart data={data} />
+          <p className="storage_container_chart_label">
+            420.2 GB of 500 GB used
+          </p>
+        </div>
+
+        <div>
+          {data.map((file, index) => (
+            <FileTypeCard key={file.name} data={file} border={data.length === (index+1)}  />
+          ))}
         </div>
       </div>
     </div>
