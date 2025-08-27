@@ -1,0 +1,22 @@
+//light-theme
+:root {
+  --background: #ffffff;
+  --sidebar: #343951;
+  --section: #f5f6fc;
+  --primary: #ff9f00;
+  --primary_light: #ffd999;
+  --font: #343951;
+  --secondary_font: #858A9D;
+
+}
+
+//dark-theme
+[data-theme="dark"] {
+  --background: #000000;
+  --sidebar: #343951;
+  --section: #f5f6fc;
+  --primary: #ff9f00;
+  --primary_light: #ffd999;
+  --font: #343951;
+  --secondary_font: #858A9D;
+}
