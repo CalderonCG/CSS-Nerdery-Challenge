@@ -1,7 +1,7 @@
 @use '../../styles/global' as * ;
 
 .recent{
-    width: 54.7%;
+    flex: 1 1 auto;
     height: 100%;
     background-color: var(--section);
 }

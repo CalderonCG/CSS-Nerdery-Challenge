@@ -1,7 +1,73 @@
-@use '../../styles/global' as * ;
+@use "../../styles/global" as *;
 
-.navbar{
-    width: 16.7%;
-    height: 100%;
-    background-color: var(--sidebar);
+.navbar {
+  width: clamp(172px, 15%, 300px);
+  height: 100%;
+  background-color: var(--sidebar);
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  &_nameplate {
+    flex: 0 0 auto;
+    width: clamp(74px, 80%, 100px);
+    height: clamp(21px, 8%, 30px);
+    background-color: aqua;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #ff9f00, #ff6860, #689ef8);
+  }
+
+  &_navigation {
+    flex: 1 1 auto;
+    display: grid;
+    grid-auto-rows: min-content;
+    gap: 30px;
+    align-content: start;
+
+    &_option {
+      display: flex;
+      align-items: center;
+      color: var(--secondary_font);
+      gap: 19px;
+    }
+
+    &_icon {
+      font-size: 1.2rem;
+    }
+  }
+
+  &_button {
+    flex: 0 0 auto;
+    width: 100%;
+    border: none;
+    color: white;
+    border-radius: 7px;
+    background-color: var(--primary);
+    height: clamp(30px, 10%, 40px);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+
+    &_text{
+        flex: 1 1 auto;
+    }
+    &_span {
+      height: 100%;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffb233;
+      border-radius: 4px;
+    }
+  }
+}
+
+.divider {
+  width: calc(100% + 72px);
+  margin-left: -36px;
+  margin-right: -36px;
+  border: none;
+  border-top: 1px solid var(--secondary_font);
 }
