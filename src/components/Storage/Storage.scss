@@ -1,7 +1,32 @@
-@use '../../styles/global' as * ;
+@use "../../styles/global" as *;
 
-.storage{
-    width: clamp(252px, 25%, 375px);
-    height: 100%;
-    background-color: var(--section);
+.storage {
+  width: clamp(252px, 25%, 375px);
+  height: 100%;
+  background-color: var(--section);
+
+  &_header {
+    display: flex;
+    height: clamp(42px, 15%, 80px);
+    border-bottom: 1px solid var(--font);
+    padding: 32px 36px;
+    justify-content: space-between;
+
+    &_options {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+    }
+
+    &_avatar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &_icon {
+        font-size: 31px;
+      }
+    }
+  }
 }
