@@ -2,12 +2,13 @@
 
 .recent_card {
   width: 100%;
-  height: clamp(42px, 8vh, 60px);
+  height: clamp(42px, 6vh, 60px);
   background-color: white;
   border-radius: 10px;
   display: grid;
   grid-template-columns: 50% 23% 23% 4%;
   align-items: center;
+  font-size: clamp(12px, 1vw, 16px);
 
   &_name{
     padding: 0 16px;
@@ -17,7 +18,7 @@
     color: var(--font);
 
     &_square{
-        height: clamp(21px, 4vh, 30px);
+        height: clamp(21px, 3vh, 30px);
         aspect-ratio: 1/1;
         border-radius: 5px;
         background-color: var(--primary);
