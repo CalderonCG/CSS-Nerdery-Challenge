@@ -9,7 +9,7 @@
 
   &_icon {
     flex: 0 0 auto;
-    font-size: clamp(28px, 2vh + 1rem, 40px);
+    font-size: clamp(24px, 2vh + 1rem, 40px);
   }
 
   &_data {
@@ -19,21 +19,23 @@
     justify-content: center;
     gap: 3px;
 
+    font-size: clamp(12px, 1vw, 16px);
+
     &_amount {
-      font-size: 14px;
+      font-size: clamp(10px, 1vw, 14px);
       color: var(--secondary_font);
     }
   }
 
   &_size {
     padding: 8px 0px;
-    width: 70px;
+    width: clamp(54px, 3vw ,70px);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 4px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: clamp(10px, 1vw, 14px);
     background-color: white;
   }
 }

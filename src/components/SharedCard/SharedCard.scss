@@ -16,7 +16,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 64px;
+    gap: clamp(32px, 3vw, 64px);
 
     &_square {
       background-color: var(--primary);
@@ -24,27 +24,7 @@
       aspect-ratio: 1.13 / 1;
     }
 
-    &_circles {
-      display: grid;
-      grid-auto-flow: column;
-
-      &_circle {
-        width: 24px;
-        height: 24px;
-        border: 1px solid var(--secondary_font);
-        background-color: white;
-        border-radius: 100%;
-        margin-left: -5px;
-        font-size: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:first-child {
-          margin-left: 0px;
-        }
-      }
-    }
+ 
   }
 
   &_data {
