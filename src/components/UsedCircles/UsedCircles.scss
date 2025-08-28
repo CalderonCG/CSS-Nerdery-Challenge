@@ -1,0 +1,20 @@
+    @use "../../styles/global" as *;
+    
+    .used_icons_circles {
+        
+      display: grid;
+      grid-auto-flow: column;
+
+      &_circle{
+        width: 24px;
+        height: 24px;
+        border: 1px solid var(--secondary_font);
+        background-color: white;
+        border-radius: 100%;
+        margin-left: -5px;
+
+        &:first-child{
+            margin-left: 0px ;
+        }
+      }
+    }

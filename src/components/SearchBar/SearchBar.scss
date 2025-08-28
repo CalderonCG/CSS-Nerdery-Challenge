@@ -1,0 +1,29 @@
+@use "../../styles/global" as *;
+
+.searchbar {
+  width: 100%;
+  position: relative;
+
+  &_icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    color: #bcbeca;
+    pointer-events: none;
+  }
+
+  &_input {
+    width: 100%;
+    height: clamp(29px, 5vh, 40px);
+    padding: 0 2rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+    &::placeholder {
+      color: #bcbeca;
+    }
+  }
+
+}

@@ -1,7 +1,40 @@
-@use '../../styles/global' as * ;
+@use "../../styles/global" as *;
 
-.recent{
-    flex: 1 1 auto;
-    height: 100%;
-    background-color: var(--section);
+.recent {
+  flex: 1 1 auto;
+  height: 100%;
+  background-color: var(--section);
+  padding: 25px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  &_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--font);
+
+    h1 {
+      font-weight: 400;
+    }
+
+    &_icons {
+      display: flex;
+      gap: 10px;
+      font-size: 20px;
+    }
+
+    &_icon {
+      color: var(--secondary_font);
+    }
+
+
+  }
+
+  &_used{
+    display: flex;
+    gap: 1rem;
+  }
 }
