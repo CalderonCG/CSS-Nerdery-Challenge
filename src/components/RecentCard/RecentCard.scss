@@ -1,0 +1,35 @@
+@use "../../styles/global" as *;
+
+.recent_card {
+  width: 100%;
+  height: clamp(42px, 8vh, 60px);
+  background-color: white;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 50% 23% 23% 4%;
+  align-items: center;
+
+  &_name{
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--font);
+
+    &_square{
+        height: clamp(21px, 4vh, 30px);
+        aspect-ratio: 1/1;
+        border-radius: 5px;
+        background-color: var(--primary);
+    }
+  }
+}
+
+
+.recent_red{
+  background-color: #FF6860;
+}
+
+.recent_green{
+  background-color: #4AC29D;
+}
