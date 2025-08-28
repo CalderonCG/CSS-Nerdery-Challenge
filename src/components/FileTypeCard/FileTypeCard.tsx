@@ -9,7 +9,7 @@ type FileTypeCardType = {
 };
 
 const IconsMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Files: FaFile,
+  Documents: FaFile,
   Pictures: FaImage,
   Videos: FaVideo,
   Available: FaBoxOpen,
@@ -22,7 +22,7 @@ function FileTypeCard({ data, border }: FileTypeCardType) {
         border: !border
     })}>
       <Icon className={clsx('file_type_icon', {
-        files: data.name === 'Files',
+        files: data.name === 'Documents',
         videos: data.name === 'Videos',
         pictures: data.name === 'Pictures',
         available: data.name === 'Available'

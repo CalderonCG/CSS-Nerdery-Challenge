@@ -2,6 +2,7 @@ import { FaCog, FaRegUserCircle, FaSignOutAlt } from "react-icons/fa";
 import "./Storage.scss";
 import Chart from "../Chart/Chart";
 import FileTypeCard from "../FileTypeCard/FileTypeCard";
+import UpgradeCard from "../UpgradeCard/UpgradeCard";
 
 export type DataType = {
   name: string;
@@ -9,7 +10,7 @@ export type DataType = {
 };
 
 const data: DataType[] = [
-  { name: "Files", value: 200 },
+  { name: "Documents", value: 200 },
   { name: "Videos", value: 125  },
   { name: "Pictures", value: 75  },
   { name: "Available", value: 50  },
@@ -37,13 +38,15 @@ function Storage() {
           <p className="storage_container_chart_label">
             420.2 GB of 500 GB used
           </p>
-        </div>
+        </div >
 
-        <div>
+        <div className="storage_container_list">
           {data.map((file, index) => (
             <FileTypeCard key={file.name} data={file} border={data.length === (index+1)}  />
           ))}
         </div>
+
+        <UpgradeCard/>
       </div>
     </div>
   );

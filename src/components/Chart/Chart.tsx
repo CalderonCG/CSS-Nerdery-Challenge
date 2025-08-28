@@ -41,7 +41,7 @@ function Chart({data}: ChartProps) {
       .join("path")
       .attr("d", chartArc)
       .attr("fill", (d) =>
-        d.data.name === "Files"
+        d.data.name === "Documents"
           ? "#FF9F00"
           : d.data.name === "Videos"
           ? "#689FF8"

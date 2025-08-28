@@ -1,14 +1,17 @@
 @use "../../styles/global" as *;
 
 .storage {
-  width: clamp(252px, 25%, 375px);
+  width: clamp(252px, 20%, 375px);
   height: 100%;
   background-color: var(--section);
+  display: flex;
+  flex-direction: column;
 
   &_header {
     display: flex;
+    flex: 0 0 auto;
     height: clamp(42px, 15%, 80px);
-    border-bottom: 1px solid #E0E7F1;
+    border-bottom: 1px solid #e0e7f1;
     padding: 32px 36px;
     justify-content: space-between;
 
@@ -34,13 +37,15 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-
     padding: 24px 36px;
     gap: 24px;
+    overflow-y: auto;
+    flex: 1 1 auto;
 
-    &_title{
+    &_title {
       font-weight: 400;
       color: var(--font);
+      flex: 0 0 auto;
     }
 
     &_chart {
@@ -51,11 +56,18 @@
       gap: 16px;
       justify-content: center;
 
+      flex: 0 0 auto;
+
       &_label {
         font-weight: 400;
         font-size: 14px;
         color: var(--secondary_font);
       }
+    }
+
+    &_list{
+      
+      flex: 1 1 auto;
     }
   }
 }
