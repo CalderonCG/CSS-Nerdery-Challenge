@@ -1,20 +1,29 @@
-    @use "../../styles/global" as *;
-    
-    .used_icons_circles {
-        
-      display: grid;
-      grid-auto-flow: column;
+@use "../../styles/global" as *;
 
-      &_circle{
-        width: 24px;
-        height: 24px;
-        border: 1px solid var(--secondary_font);
-        background-color: white;
-        border-radius: 100%;
-        margin-left: -5px;
+.used_icons_circles {
+  display: grid;
+  grid-auto-flow: column;
 
-        &:first-child{
-            margin-left: 0px ;
-        }
-      }
+  &_circle {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--secondary_font);
+    background-color: white;
+    border-radius: 100%;
+    margin-left: -5px;
+
+    &:first-child {
+      margin-left: 0px;
     }
+  }
+}
+
+.used_icons_circles_circle.red {
+  border: 2px solid #ff6860;
+}
+.used_icons_circles_circle.green {
+  border: 2px solid #4AC29D;
+}
+.used_icons_circles_circle.yellow {
+  border: 2px solid #FF9F00;
+}

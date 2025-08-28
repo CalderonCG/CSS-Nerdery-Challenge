@@ -1,21 +1,24 @@
+import { FaEllipsisV } from "react-icons/fa";
 import UsedCircles from "../UsedCircles/UsedCircles";
 import "./UserCard.scss";
 
 type UsedCardProps = {
     name: string;
     date: string;
-    amount: number;
+    amount: string[];
+    label: boolean
 }
 
-function UsedCard({name, date, amount}: UsedCardProps) {
+function UsedCard({name, date, amount, label}: UsedCardProps) {
   return (
     <div className="used">
+        <FaEllipsisV className="used_options"/>
       <div className="used_icons">
         <div className="used_icons_squares">
           <div className="used_icons_squares_back" />
           <div className="used_icons_squares_main" />
         </div>
-        <UsedCircles amount={amount}/>
+        <UsedCircles amount={amount} label={label}/>
       </div>
 
       <div className="used_data">
