@@ -16,29 +16,38 @@ import {
 function Navbar() {
   return (
     <div className="navbar">
-      <span className="navbar_nameplate" />
+      <div className="navbar_header">
+        <div className="navbar_header_nameplate" />
+      </div>
       <div className="navbar_navigation">
         <span className="navbar_navigation_option">
+          <div className="navbar_navigation_option_border" />
           <FaHome className="navbar_navigation_icon" />
           <p>Home</p>
         </span>
         <span className="navbar_navigation_option">
+          <div className="navbar_navigation_option_border" />
           <FaFile className="navbar_navigation_icon" />
           <p>My Files</p>
         </span>
         <span className="navbar_navigation_option">
+          <div className="navbar_navigation_option_border" />
+
           <FaClock className="navbar_navigation_icon" />
           <p>Recent Files</p>
         </span>
         <span className="navbar_navigation_option">
+          <div className="navbar_navigation_option_border" />
           <FaShareAlt className="navbar_navigation_icon" />
           <p>Shared Files</p>
         </span>
         <span className="navbar_navigation_option">
+          <div className="navbar_navigation_option_border" />
           <FaHandHolding className="navbar_navigation_icon" />
           <p>File Request</p>
         </span>
         <span className="navbar_navigation_option">
+          <div className="navbar_navigation_option_border" />
           <FaTrash className="navbar_navigation_icon" />
           <p>Trash</p>
         </span>

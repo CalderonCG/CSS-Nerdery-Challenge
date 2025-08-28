@@ -5,19 +5,24 @@
   width: clamp(172px, 15%, 300px);
   height: 100%;
   background-color: var(--sidebar);
-  padding: 32px 36px;
+  padding: 32px 0px;
   display: flex;
   flex-direction: column;
   gap: clamp(2rem, 8%, 5rem);
 
   //Nameplate at the top-------------------------------------
-  &_nameplate {
+  &_header {
     flex: 0 0 auto;
-    width: clamp(74px, 80%, 100px);
+    width: 100%;
     height: clamp(21px, 8%, 30px);
-    background-color: aqua;
-    border-radius: 5px;
-    background: linear-gradient(90deg, #ff9f00, #ff6860, #689ef8);
+    padding: 0 36px;
+
+    &_nameplate {
+      width: clamp(74px, 80%, 100px);
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(90deg, #ff9f00, #ff6860, #689ef8);
+    }
   }
 
   //Nav options container-------------------------------
@@ -25,18 +30,35 @@
     flex: 1 1 auto;
     display: grid;
     grid-auto-rows: min-content;
-    gap: 30px;
     align-content: start;
 
     //Nav option label with icon
     &_option {
+      position: relative;
+      padding: 0 36px;
       display: flex;
       align-items: center;
       color: var(--secondary_font);
+      height: 44px;
       gap: 19px;
       cursor: pointer;
+      &:hover &_border {
+        display: block;
+      }
+
       &:hover {
         color: white;
+      }
+
+      &_border {
+        display: none;
+        width: 7px;
+        height: 100%;
+        background-color: white;
+        position: absolute;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        left: 0;
       }
     }
 
@@ -51,11 +73,12 @@
     position: relative;
     flex: 0 0 auto;
     width: 100%;
+    padding: 0 36px;
 
-    //Box with hoverable gap for the menu 
+    //Box with hoverable gap for the menu
     &_box {
       display: grid;
-      width: 100%;
+      width: calc(100% - 72px);
       height: clamp(150px, 30%, 240px);
       border-radius: 9px;
       position: absolute;
@@ -71,6 +94,7 @@
   //Menu with options
   &_actions {
     background-color: #464c61;
+    position: relative;
     display: grid;
     width: 100%;
     padding: 16px;
@@ -88,6 +112,19 @@
         color: white;
       }
     }
+  }
+
+  &_actions:before {
+    content: "";
+      position: absolute;
+  bottom: -12px;   
+  left: 25px;      
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #464c61; 
+  z-index: 10;
   }
 
   //Hoverable button----------
@@ -125,12 +162,10 @@
   }
 }
 
-
 //Divider with negative margin to avoid padding--------------------
 .divider {
-  width: calc(100% + 72px);
-  margin-left: -36px;
-  margin-right: -36px;
+  width: 100%;
   border: none;
+  margin-top: 22px;
   border-top: 1px solid var(--secondary_font);
 }
