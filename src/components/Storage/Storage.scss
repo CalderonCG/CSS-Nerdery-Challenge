@@ -6,6 +6,8 @@
   background-color: var(--section);
   display: flex;
   flex-direction: column;
+
+  // Hidden on mobile without toggle on
   @media (max-width: 1000px) {
     visibility: hidden;
     position: absolute;
@@ -15,10 +17,13 @@
     width: 80%;
     max-width: 350px;
     
+    //Animation when displayed
     transform: translateX(100%);
     transition: transform 0.3s ease,  visibility 0.3s ;
   }
 
+
+  // Header section---------------------------------------------------
   &_header {
     display: flex;
     flex: 0 0 auto;
@@ -30,6 +35,7 @@
       padding: 24px 36px;
     }
 
+    //User options
     &_options {
       display: flex;
       align-items: center;
@@ -48,6 +54,7 @@
       }
     }
 
+    //User info
     &_avatar {
       display: flex;
       align-items: center;
@@ -63,6 +70,7 @@
     }
   }
 
+  // Main section----------------------------------------------------
   &_container {
     width: 100%;
     display: flex;
@@ -86,6 +94,7 @@
       font-size: clamp(20px, 2vw - 1rem, 32px);
     }
 
+    //Chart container----------------
     &_chart {
       width: 100%;
       display: flex;
@@ -103,6 +112,7 @@
       }
     }
 
+    //List container
     &_list {
       flex: 1 1 auto;
     }

@@ -5,9 +5,12 @@ import UsedCard from "../UsedCard/UsedCard";
 import SharedCard from "../SharedCard/SharedCard";
 import RecentCard from "../RecentCard/RecentCard";
 function Recent() {
+  // Component-----------------------------------------------------
   return (
     <div className="recent">
       <SearchBar />
+
+      {/*Recently used------------------------------  */}
       <div className="recent_header">
         <h1>Recently Used</h1>
         <div className="recent_header_icons">
@@ -16,6 +19,7 @@ function Recent() {
         </div>
       </div>
 
+      {/* Mapping cards */}
       <div className="recent_used">
         <UsedCard
           name="App Project"
@@ -37,6 +41,7 @@ function Recent() {
         />
       </div>
 
+      {/* Recent files ------------------------------------------------- */}
       <div className="recent_header">
         <h1>Recent files</h1>
         <p>View All</p>
@@ -48,17 +53,40 @@ function Recent() {
           <p>Members</p>
           <p>Last Modified</p>
         </div>
-        <RecentCard name="Travel Landing Page" members={5} date="Mar 8, 2020" color="primary"/>
-        <RecentCard name="True Photos" members={12} date="Mar 8, 2020" color="green"/>
-        <RecentCard name="Dashboard Structure" members={10} date="Mar 9, 2020" color="red"/>
-        <RecentCard name="Character Illustration" members={3} date="Mar 10, 2020" color="primary"/>
+        {/* Mapping cards */}
+        <RecentCard
+          name="Travel Landing Page"
+          members={5}
+          date="Mar 8, 2020"
+          color="primary"
+        />
+        <RecentCard
+          name="True Photos"
+          members={12}
+          date="Mar 8, 2020"
+          color="green"
+        />
+        <RecentCard
+          name="Dashboard Structure"
+          members={10}
+          date="Mar 9, 2020"
+          color="red"
+        />
+        <RecentCard
+          name="Character Illustration"
+          members={3}
+          date="Mar 10, 2020"
+          color="primary"
+        />
       </div>
 
+      {/* Share with me ------------------------------------------ */}
       <div className="recent_header">
         <h1>Share with me</h1>
         <p>View All</p>
       </div>
 
+      {/* Mapping cards */}
       <div className="recent_used">
         <SharedCard
           name="Landing Page"

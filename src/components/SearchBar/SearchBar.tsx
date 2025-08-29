@@ -2,6 +2,7 @@ import { FaSearch } from 'react-icons/fa'
 import './SearchBar.scss'
 
 function SearchBar() {
+  //Component-------------------------------------------------------------
   return (
     <div className='searchbar'>
         <FaSearch className='searchbar_icon'/>

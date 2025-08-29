@@ -13,10 +13,12 @@
   scrollbar-color: var(--secondary_font) var(--section);
   scrollbar-width: thin;
 
+  // Hide padding on responsive designs to give space to top controls
   @media (max-width: 1000px) {
     padding-top: 0;
   }
 
+  // Title headers of sections-------------------------------
   &_header {
     width: 100%;
     display: flex;
@@ -44,6 +46,8 @@
     }
   }
 
+
+  // Display of square cards-------------------------------------- 
   &_used {
     display: flex;
     gap: 1rem;
@@ -57,6 +61,8 @@
     }
   }
 
+
+  //Display of recent file cards---------------------------
   &_files {
     display: grid;
     gap: 16px;

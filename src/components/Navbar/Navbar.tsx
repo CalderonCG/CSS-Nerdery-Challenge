@@ -16,28 +16,37 @@ import {
 } from "react-icons/fa";
 import ThemeButton from "../ThemeButton/ThemeButton";
 
+
+//Types-------------------------------------------------------------------------
 type NavbarProps = {
   show: boolean;
   handleClose: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+
 function Navbar({ show, handleClose }: NavbarProps) {
+
+//Component---------------------------------------------------------------
   return (
+    //Navbar will dynamicaly hide itself on mobile
     <div
       className={clsx("navbar", {
         navbar_display: show,
       })}
     >
+      {/* Header with nameplate and controls------------------ */}
       <div className="navbar_header">
         <div className="navbar_header_nameplate" />
         <div className="navbar_header_controls">
           <ThemeButton  handleClose={handleClose}/>
+          {/* Close button only available in mobile */}
           <FaTimes
             className="navbar_header_close"
             onClick={() => handleClose(false)}
           />
         </div>
       </div>
+      {/* Navigation options---------------------------------- */}
       <div className="navbar_navigation">
         <span className="navbar_navigation_option">
           <div className="navbar_navigation_option_border" />
@@ -51,7 +60,6 @@ function Navbar({ show, handleClose }: NavbarProps) {
         </span>
         <span className="navbar_navigation_option">
           <div className="navbar_navigation_option_border" />
-
           <FaClock className="navbar_navigation_icon" />
           <p>Recent Files</p>
         </span>
@@ -72,6 +80,8 @@ function Navbar({ show, handleClose }: NavbarProps) {
         </span>
         <hr className="divider" />
       </div>
+
+      {/* Button with hover menu-------------------------- */}
       <div className="navbar_wrapper">
         <div className="navbar_wrapper_box">
           <div className="navbar_actions">

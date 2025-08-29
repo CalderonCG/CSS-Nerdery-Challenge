@@ -5,6 +5,8 @@ import FileTypeCard from "../FileTypeCard/FileTypeCard";
 import UpgradeCard from "../UpgradeCard/UpgradeCard";
 import clsx from "clsx";
 
+
+//Types--------------------------------------------------------------------
 export type DataType = {
   name: string;
   value: number;
@@ -15,6 +17,7 @@ type StorageProps = {
   handleClose: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+//Mock data----------------------------------------------------------------
 const data: DataType[] = [
   { name: "Documents", value: 200 },
   { name: "Videos", value: 125 },
@@ -23,12 +26,17 @@ const data: DataType[] = [
 ];
 
 function Storage({ show, handleClose }: StorageProps) {
+
+  //Component---------------------------------------------------------------
   return (
+    // Sidebar hiddes itself on mobile 
     <div
       className={clsx("storage", {
         storage_display: show,
       })}
     >
+
+      {/* Header section-------------------------------------------- */}
       <div className="storage_header">
         <div className="storage_header_options">
           <FaTimes
@@ -45,7 +53,10 @@ function Storage({ show, handleClose }: StorageProps) {
         </span>
       </div>
 
+      {/* Main section ----------------------------------------------- */}
       <div className="storage_container">
+
+        {/* Chart container */}
         <h1 className="storage_container_title">Storage</h1>
         <div className="storage_container_chart">
           <Chart data={data} />
@@ -54,6 +65,8 @@ function Storage({ show, handleClose }: StorageProps) {
           </p>
         </div>
 
+        {/* Used storage list */}
+        {/* Maps cards with mock data */}
         <div className="storage_container_list">
           {data.map((file, index) => (
             <FileTypeCard
@@ -64,6 +77,7 @@ function Storage({ show, handleClose }: StorageProps) {
           ))}
         </div>
 
+        {/* Update storage section */}
         <UpgradeCard />
       </div>
     </div>

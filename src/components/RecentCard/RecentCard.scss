@@ -1,13 +1,13 @@
 @use "../../styles/global" as *;
 
+//Component container
 .recent_card {
   width: 100%;
   height: clamp(42px, 6vh, 60px);
-  
   background-color: var(--card);
   border-radius: 10px;
   display: grid;
-  grid-template-columns: 50% 23% 23% 4%;
+  grid-template-columns: 50% 23% 23% 4%; //Divides itself to fit header grid 
   align-items: center;
   font-size: clamp(12px, 1vw, 16px);
 
@@ -26,6 +26,7 @@
       padding: 0;
     }
 
+    //Card icon, hides itself on mobile screens
     &_square {
       height: clamp(21px, 3vh, 30px);
       aspect-ratio: 1/1;
@@ -39,6 +40,7 @@
   }
 }
 
+// Color selector------------------------------------
 .recent_red {
   background-color: #ff6860;
 }

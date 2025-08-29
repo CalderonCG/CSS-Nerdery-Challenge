@@ -1,14 +1,15 @@
 @use "../../styles/global" as *;
 
+//Component container--------------------
 .used_icons_circles {
   display: grid;
   grid-auto-flow: column;
 
+  //Circle overlap
   &_circle {
     height: clamp(18px, 2vw, 24px);
     aspect-ratio: 1;
     border: 2px solid var(--secondary_font);
-
     background-color: var(--card);
     border-radius: 100%;
     margin-left: -5px;
@@ -23,11 +24,13 @@
       font-size: 8px;
     }
     &:first-child {
-      margin-left: 0px;
+      margin-left: 0px; //The first element in the grid doesnt overlap anything
     }
   }
 }
 
+
+//Color selector------------------------------
 .used_icons_circles_circle.red {
   border: 2px solid #ff6860;
 }

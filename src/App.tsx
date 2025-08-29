@@ -7,9 +7,14 @@ import { MdOutlineMenu } from "react-icons/md";
 import { FaBox } from "react-icons/fa";
 
 function App() {
+
+  //States------------------------------------------------------
   const [showSidebar, setShowSidebar] = useState(false);
   const [showStorage, setShowStorage] = useState(false);
   
+
+  //Functions------------------------------------------------
+  //Handle close sidebars
   const handleClose = () => {
     setShowSidebar(false);
     setShowStorage(false);
