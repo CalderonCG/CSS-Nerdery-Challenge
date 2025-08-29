@@ -10,13 +10,12 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+  scrollbar-color: var(--secondary_font) var(--section);
+  scrollbar-width: thin;
 
   @media (max-width: 434px) {
     padding-top: 0;
   }
-
-  scrollbar-color: var(--secondary_font) var(--section);
-  scrollbar-width: thin;
 
   &_header {
     width: 100%;
