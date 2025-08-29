@@ -3,6 +3,7 @@
 .searchbar {
   width: 100%;
   position: relative;
+  
 
   &_icon {
     position: absolute;
@@ -20,6 +21,7 @@
     border: none;
     outline: none;
     border-radius: 10px;
+  background-color: var(--card);
 
     &::placeholder {
       color: #bcbeca;

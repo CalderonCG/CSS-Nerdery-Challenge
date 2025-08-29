@@ -1,0 +1,19 @@
+@use "../../styles/global" as *;
+
+.theme {
+  display: flex;
+  border: none;
+  background-color: transparent;
+
+  .icon_moon {
+    color: var(--secondary_font);
+
+    font-size: 24px;
+  }
+
+  .icon_sun {
+    color: var(--secondary_font);
+
+    font-size: 24px;
+  }
+}

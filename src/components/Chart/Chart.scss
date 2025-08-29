@@ -11,7 +11,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    background-color: white;
+
+    background-color: var(--card);
     transform: translate(-50%, -50%);
     width: 135px;
     height: 135px;
@@ -29,14 +30,14 @@
       font-size: 2rem;
       font-weight: 400;
 
-      &_symbol{
+      &_symbol {
         font-size: 1.5rem;
       }
     }
 
-    &_label{
-        color: var(--secondary_font);
-        font-weight: 400;
+    &_label {
+      color: var(--secondary_font);
+      font-weight: 400;
     }
   }
 }

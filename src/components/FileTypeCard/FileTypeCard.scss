@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 3px;
-
+    color: var(--font);
     font-size: clamp(12px, 1vw, 16px);
     @media (max-width: 1000px) {
       font-size: 14px;
@@ -42,7 +42,8 @@
     border-radius: 4px;
     font-weight: 500;
     font-size: clamp(10px, 1vw, 14px);
-    background-color: white;
+    background-color: var(--card);
+    color: var(--font);
 
     @media (max-width: 1000px) {
       font-size: 12px;

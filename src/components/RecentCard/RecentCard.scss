@@ -3,7 +3,8 @@
 .recent_card {
   width: 100%;
   height: clamp(42px, 6vh, 60px);
-  background-color: white;
+  
+  background-color: var(--card);
   border-radius: 10px;
   display: grid;
   grid-template-columns: 50% 23% 23% 4%;

@@ -7,16 +7,18 @@
   --primary_light: #ffd999;
   --font: #343951;
   --secondary_font: #858A9D;
+  --card: #ffff;   /* subtle contrast, blends smoothly */
 
 }
 
 //dark-theme
 [data-theme="dark"] {
-  --background: #000000;
-  --sidebar: #343951;
-  --section: #f5f6fc;
-  --primary: #ff9f00;
-  --primary_light: #ffd999;
-  --font: #343951;
-  --secondary_font: #858A9D;
+  --background: #0c0e14;        /* main background */
+  --sidebar: #252a3b;           /* sidebar darker but distinct */
+  --section: #2e3247;           /* section panels/cards */
+  --primary: #ff9f00;           /* brand accent */
+  --primary_light: #ffb84d;     /* lighter accent */
+  --font: #e6e6e9;              /* main text (light on dark) */
+  --secondary_font: #9ca0b5;    /* muted text */
+  --card: #383d55;   /* subtle contrast, blends smoothly */
 }

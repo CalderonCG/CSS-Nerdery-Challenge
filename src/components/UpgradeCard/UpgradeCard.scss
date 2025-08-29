@@ -1,9 +1,11 @@
+@use "../../styles/global" as *;
 .upgrade {
   width: 100%;
   min-height: clamp(202px, 35%, 275px);
   height: 202px;
   padding: 20px clamp(20px, 2vw, 32px);
-  background-color: white;
+
+  background-color: var(--card);
   border-radius: 18px;
   display: flex;
   flex-direction: column;

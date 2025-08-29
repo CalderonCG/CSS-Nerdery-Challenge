@@ -14,6 +14,7 @@ import {
   FaTrash,
   FaUpload,
 } from "react-icons/fa";
+import ThemeButton from "../ThemeButton/ThemeButton";
 
 type NavbarProps = {
   show: boolean;
@@ -29,7 +30,13 @@ function Navbar({ show, handleClose }: NavbarProps) {
     >
       <div className="navbar_header">
         <div className="navbar_header_nameplate" />
-        <FaTimes className="navbar_header_close" onClick={()=>handleClose(false)}/>
+        <div className="navbar_header_controls">
+          <ThemeButton  handleClose={handleClose}/>
+          <FaTimes
+            className="navbar_header_close"
+            onClick={() => handleClose(false)}
+          />
+        </div>
       </div>
       <div className="navbar_navigation">
         <span className="navbar_navigation_option">

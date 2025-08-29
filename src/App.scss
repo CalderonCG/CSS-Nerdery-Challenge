@@ -18,6 +18,7 @@
   display: none;
   font-size: 24px;
 
+  color: var(--font);
 
   @media (max-width: 1000px) {
     display: flex;
@@ -26,7 +27,7 @@
   }
 }
 
-.backdrop{
+.backdrop {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -36,5 +37,3 @@
   background-color: black;
   opacity: 50%;
 }
-
-

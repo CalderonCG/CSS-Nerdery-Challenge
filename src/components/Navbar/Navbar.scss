@@ -25,15 +25,23 @@
     width: 100%;
     height: clamp(21px, 8%, 30px);
     padding: 0 32px;
-
-      @media (max-width: 1000px) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+
+    @media (max-width: 1000px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &_controls {
+      display: flex;
+      gap: 16px;
+    }
 
     &_nameplate {
-      width: clamp(74px, 80%, 100px);
+      width: clamp(74px, 70%, 100px);
       height: 100%;
       border-radius: 5px;
       background: linear-gradient(90deg, #ff9f00, #ff6860, #689ef8);
@@ -41,6 +49,7 @@
 
     &_close {
       display: none;
+
       @media (max-width: 1000px) {
         display: flex;
         font-size: 24px;

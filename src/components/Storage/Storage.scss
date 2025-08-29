@@ -47,6 +47,8 @@
     &_avatar {
       display: flex;
       align-items: center;
+
+      color: var(--font);
       gap: 10px;
 
       font-size: clamp(12px, 1vw, 16px);
@@ -68,7 +70,6 @@
 
     @media (max-width: 1000px) {
       padding: 24px 36px;
-      
     }
 
     &_title {
