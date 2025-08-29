@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import "./Navbar.scss";
 import {
   FaClock,
@@ -13,9 +14,18 @@ import {
   FaUpload,
 } from "react-icons/fa";
 
-function Navbar() {
+type NavbarProps = {
+  show: boolean;
+  handleClose: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function Navbar({ show, handleClose }: NavbarProps) {
   return (
-    <div className="navbar">
+    <div
+      className={clsx("navbar", {
+        navbar_display: show,
+      })}
+    >
       <div className="navbar_header">
         <div className="navbar_header_nameplate" />
       </div>

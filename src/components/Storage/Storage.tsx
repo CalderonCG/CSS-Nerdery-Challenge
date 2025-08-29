@@ -3,22 +3,32 @@ import "./Storage.scss";
 import Chart from "../Chart/Chart";
 import FileTypeCard from "../FileTypeCard/FileTypeCard";
 import UpgradeCard from "../UpgradeCard/UpgradeCard";
+import clsx from "clsx";
 
 export type DataType = {
   name: string;
   value: number;
 };
 
+type StorageProps = {
+  show: boolean;
+  handleClose: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
 const data: DataType[] = [
   { name: "Documents", value: 200 },
-  { name: "Videos", value: 125  },
-  { name: "Pictures", value: 75  },
-  { name: "Available", value: 50  },
+  { name: "Videos", value: 125 },
+  { name: "Pictures", value: 75 },
+  { name: "Available", value: 50 },
 ];
 
-function Storage() {
+function Storage({ show, handleClose }: StorageProps) {
   return (
-    <div className="storage">
+    <div
+      className={clsx("storage", {
+        storage_display: show,
+      })}
+    >
       <div className="storage_header">
         <div className="storage_header_options">
           <FaSignOutAlt className="storage_header_options_icon" />
@@ -38,15 +48,19 @@ function Storage() {
           <p className="storage_container_chart_label">
             420.2 GB of 500 GB used
           </p>
-        </div >
+        </div>
 
         <div className="storage_container_list">
           {data.map((file, index) => (
-            <FileTypeCard key={file.name} data={file} border={data.length === (index+1)}  />
+            <FileTypeCard
+              key={file.name}
+              data={file}
+              border={data.length === index + 1}
+            />
           ))}
         </div>
 
-        <UpgradeCard/>
+        <UpgradeCard />
       </div>
     </div>
   );

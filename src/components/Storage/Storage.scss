@@ -6,6 +6,14 @@
   background-color: var(--section);
   display: flex;
   flex-direction: column;
+  @media (max-width: 1000px) {
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    font-size: 16px;
+    width: 60%;
+  }
 
   &_header {
     display: flex;
@@ -14,7 +22,9 @@
     border-bottom: 1px solid #e0e7f1;
     padding: 32px 36px;
     justify-content: space-between;
-    
+    @media (max-width: 1000px) {
+      padding: 32px 16px;
+    }
 
     &_options {
       display: flex;
@@ -27,8 +37,8 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      
-    font-size: clamp(12px, 1vw, 16px);
+
+      font-size: clamp(12px, 1vw, 16px);
 
       &_icon {
         font-size: 31px;
@@ -45,11 +55,15 @@
     overflow-y: auto;
     flex: 1 1 auto;
 
+    @media (max-width: 1000px) {
+      padding: 24px 16px;
+    }
+
     &_title {
       font-weight: 400;
       color: var(--font);
       flex: 0 0 auto;
-      
+
       font-size: clamp(20px, 2vw - 1rem, 32px);
     }
 
@@ -70,9 +84,12 @@
       }
     }
 
-    &_list{
-      
+    &_list {
       flex: 1 1 auto;
     }
+  }
+
+  &_display {
+    display: flex;
   }
 }
