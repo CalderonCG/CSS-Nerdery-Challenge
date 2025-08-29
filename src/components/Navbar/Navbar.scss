@@ -1,0 +1,247 @@
+@use "../../styles/global" as *;
+
+.navbar {
+  //Navbar main container
+  width: clamp(172px, 15%, 300px);
+  height: 100%;
+  background-color: var(--sidebar);
+  padding: 32px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 8%, 5rem);
+  font-size: clamp(10px, 1vw, 16px);
+
+  //Hidden on mobile without toggle on
+  @media (max-width: 1000px) {
+    visibility: hidden;
+    position: absolute;
+    z-index: 100;
+    font-size: 16px;
+    width: 80%;
+    max-width: 350px;
+    //Animation when displayed
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, visibility 0.3s;
+  }
+
+  //Nameplate at the top-------------------------------------
+  &_header {
+    flex: 0 0 auto;
+    width: 100%;
+    height: clamp(21px, 8%, 30px);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 1000px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &_controls {
+      display: flex;
+      gap: 16px;
+    }
+
+    &_nameplate {
+      width: clamp(74px, 70%, 100px);
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(90deg, #ff9f00, #ff6860, #689ef8);
+    }
+
+    &_close {
+      display: none;
+
+      @media (max-width: 1000px) {
+        display: flex;
+        font-size: 24px;
+        color: var(--secondary_font);
+
+        &:hover {
+          color: var(--font);
+        }
+      }
+    }
+  }
+
+  //Nav options container-------------------------------
+  &_navigation {
+    flex: 1 1 auto;
+    display: grid;
+    grid-auto-rows: min-content;
+    align-content: start;
+
+    //Nav option label with icon
+    &_option {
+      position: relative;
+      padding: 0 36px;
+      display: flex;
+      align-items: center;
+      color: var(--secondary_font);
+      height: 44px;
+      gap: clamp(10px, 1vw, 19px);
+      cursor: pointer;
+
+      @media (max-width: 1000px) {
+        gap: 32px;
+      }
+      &:hover &_border {
+        display: block;
+      }
+
+      &:hover {
+        color: white;
+      }
+
+      &_border {
+        display: none;
+        width: 5px;
+        height: 100%;
+        background-color: white;
+        position: absolute;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        left: 0;
+      }
+    }
+
+    //Nav option icon
+    &_icon {
+      font-size: clamp(12px, 1vw, 19.2px);
+
+      @media (max-width: 1000px) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  //Create new button container---------------------------
+  &_wrapper {
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 0 32px;
+
+    font-size: clamp(10px, 1vw, 16px);
+    @media (max-width: 1000px) {
+      font-size: 16px;
+    }
+
+    //Box with hoverable gap for the menu
+    &_box {
+      display: grid;
+      width: calc(100% - 64px);
+      height: clamp(150px, 30%, 240px);
+      border-radius: 9px;
+      position: absolute;
+      padding-bottom: 2rem;
+      bottom: 100%;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.1s ease, transform 0.1s ease;
+    }
+  }
+
+  //Menu with options
+  &_actions {
+    background-color: #464c61;
+    position: relative;
+    display: grid;
+    width: 100%;
+    padding: clamp(12px, 1vw - 0.5rem, 16px);
+    border-radius: 9px;
+
+    @media (max-width: 1000px) {
+      padding: 16px;
+    }
+
+    //Menu card
+    &_action {
+      display: flex;
+      align-items: center;
+      color: var(--secondary_font);
+      gap: clamp(6px, 1vw - 0.5rem, 16px);
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  // Speech bubble
+  &_actions:before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #464c61;
+    z-index: 10;
+  }
+
+  //Hoverable button----------
+  &_button {
+    width: 100%;
+    border: none;
+    color: white;
+    border-radius: 7px;
+    background-color: var(--primary);
+    height: clamp(30px, 10%, 40px);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+
+    &:hover {
+      background-color: #ffb233;
+      transform: scale(1.01);
+    }
+
+    &_text {
+      flex: 1 1 auto;
+
+      font-size: clamp(10px, 1vw, 16px);
+      @media (max-width: 1000px) {
+        font-size: 16px;
+      }
+    }
+    //Button + icon
+    &_span {
+      height: 100%;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffb233;
+      border-radius: 4px;
+    }
+  }
+
+  //Hover action
+  &_wrapper:hover &_wrapper_box {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  &_display {
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.3s ease, visibility 0.3s;
+  }
+}
+
+//Divider with negative margin to avoid padding--------------------
+.divider {
+  width: 100%;
+  border: none;
+  margin-top: 22px;
+  border-top: 1px solid var(--secondary_font);
+}

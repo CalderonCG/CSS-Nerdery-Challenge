@@ -1,0 +1,56 @@
+@use "../../styles/global" as *;
+
+//Component container
+.recent_card {
+  width: 100%;
+  height: clamp(42px, 6vh, 60px);
+  background-color: var(--card);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 50% 23% 23% 4%; //Divides itself to fit header grid
+  align-items: center;
+  font-size: clamp(12px, 1vw, 16px);
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 45% 25% 25% 10%;
+    padding: 0 5px;
+  }
+  &_name {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--font);
+
+    @media (max-width: 434px) {
+      padding: 0;
+    }
+
+    //Card icon, hides itself on mobile screens
+    &_square {
+      height: clamp(21px, 3vh, 30px);
+      aspect-ratio: 1/1;
+      border-radius: 5px;
+      background-color: var(--primary);
+
+      @media (max-width: 434px) {
+        display: none;
+      }
+    }
+  }
+
+  &_icon {
+    &:hover {
+      color: var(--font);
+    }
+  }
+}
+
+// Color selector------------------------------------
+.recent_red {
+  background-color: #ff6860;
+}
+
+.recent_green {
+  background-color: #4ac29d;
+}

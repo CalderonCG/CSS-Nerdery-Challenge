@@ -1,0 +1,136 @@
+@use "../../styles/global" as *;
+
+.storage {
+  width: clamp(252px, 20%, 375px);
+  height: 100%;
+  background-color: var(--section);
+  display: flex;
+  flex-direction: column;
+
+  // Hidden on mobile without toggle on
+  @media (max-width: 1000px) {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    font-size: 16px;
+    width: 80%;
+    max-width: 350px;
+
+    //Animation when displayed
+    transform: translateX(100%);
+    transition: transform 0.3s ease, visibility 0.3s;
+  }
+
+  // Header section---------------------------------------------------
+  &_header {
+    display: flex;
+    flex: 0 0 auto;
+    height: clamp(42px, 15%, 80px);
+    border-bottom: 1px solid #e0e7f1;
+    padding: 32px 36px;
+    justify-content: space-between;
+    @media (max-width: 1000px) {
+      padding: 24px 36px;
+    }
+
+    //User options
+    &_options {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      color: var(--secondary_font);
+      @media (max-width: 1000px) {
+        font-size: 24px;
+        gap: 16px;
+      }
+
+      &_icon {
+        &:hover {
+          color: var(--font);
+        }
+      }
+      &_close {
+        display: none;
+        @media (max-width: 1000px) {
+          display: flex;
+        }
+
+        &:hover {
+          color: var(--font);
+        }
+      }
+    }
+
+    //User info
+    &_avatar {
+      display: flex;
+      align-items: center;
+      color: var(--font);
+      gap: 10px;
+      font-size: clamp(12px, 1vw, 16px);
+
+      &_icon {
+        font-size: 31px;
+      }
+    }
+  }
+
+  // Main section----------------------------------------------------
+  &_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 32px;
+    gap: 24px;
+    overflow-y: auto;
+    flex: 1 1 auto;
+    scrollbar-color: var(--secondary_font) var(--section);
+    scrollbar-width: thin;
+
+    @media (max-width: 1000px) {
+      padding: 24px 36px;
+    }
+
+    &_title {
+      font-weight: 400;
+      color: var(--font);
+      flex: 0 0 auto;
+
+      font-size: clamp(20px, 2vw - 1rem, 32px);
+    }
+
+    //Chart container----------------
+    &_chart {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+      flex: 0 0 auto;
+
+      &_label {
+        font-weight: 400;
+        font-size: clamp(10px, 1vw, 14px);
+        color: var(--secondary_font);
+
+        @media (max-width: 1000px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    //List container
+    &_list {
+      flex: 1 1 auto;
+    }
+  }
+
+  &_display {
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.3s ease, visibility 0.3s;
+  }
+}

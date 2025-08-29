@@ -1,0 +1,67 @@
+@use "../../styles/global" as *;
+.upgrade {
+  width: 100%;
+  min-height: clamp(202px, 35%, 275px);
+  height: 202px;
+  padding: 20px clamp(20px, 2vw, 32px);
+
+  background-color: var(--card);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 auto;
+
+  @media (max-width: 1000px) {
+    align-self: center;
+  }
+
+  &_image {
+    width: 100%;
+    height: clamp(73px, 40%, 150px);
+    background: linear-gradient(90deg, #ff9f00, #ff6860, #689ef8);
+    border-radius: 11px;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &_text {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      h1 {
+        font-size: clamp(14px, 1vw, 18px);
+        font-weight: 400;
+        text-align: center;
+        color: var(--font);
+      }
+
+      p {
+        font-size: clamp(8px, 1vw - 0.15rem, 14px);
+        font-weight: 400;
+        text-align: center;
+        color: var(--secondary_font);
+
+        @media (max-width: 1000px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &_button {
+      background-color: var(--primary);
+      border: none;
+      border-radius: 7px;
+      color: white;
+      width: 100%;
+      padding: 10px 0;
+      font-size: clamp(12px, 1vw - 0.5rem, 18px);
+      &:hover {
+        background-color: #ffb233;
+        transform: scale(1.01);
+      }
+    }
+  }
+}

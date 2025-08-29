@@ -7,16 +7,18 @@
   --primary_light: #ffd999;
   --font: #343951;
   --secondary_font: #858A9D;
+  --card: #ffff;   
 
 }
 
 //dark-theme
 [data-theme="dark"] {
-  --background: #000000;
-  --sidebar: #343951;
-  --section: #f5f6fc;
-  --primary: #ff9f00;
-  --primary_light: #ffd999;
-  --font: #343951;
-  --secondary_font: #858A9D;
+  --background: #0c0e14;        
+  --sidebar: #252a3b;           
+  --section: #2e3247;           
+  --primary: #ff9f00;           
+  --primary_light: #ffb84d;     
+  --font: #e6e6e9;              
+  --secondary_font: #9ca0b5;    
+  --card: #383d55;   
 }

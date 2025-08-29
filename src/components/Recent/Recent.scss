@@ -1,0 +1,86 @@
+@use "../../styles/global" as *;
+
+.recent {
+  flex: 1 1 auto;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  background-color: var(--section);
+  padding: 25px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  scrollbar-color: var(--secondary_font) var(--section);
+  scrollbar-width: thin;
+
+  // Hide padding on responsive designs to give space to top controls
+  @media (max-width: 1000px) {
+    padding-top: 0;
+  }
+
+  // Title headers of sections-------------------------------
+  &_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--font);
+
+    p {
+      font-size: clamp(12px, 1vw, 16px);
+      cursor: pointer;
+      &_hover{
+        
+      }
+    }
+
+    h1 {
+      font-size: clamp(20px, 2vw - 1rem, 32px);
+      font-weight: 400;
+    }
+
+    &_icons {
+      display: flex;
+      gap: 10px;
+      font-size: 20px;
+    }
+
+    &_icon {
+      color: var(--secondary_font);
+    }
+  }
+
+
+  // Display of square cards-------------------------------------- 
+  &_used {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 1000px) {
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 434px) {
+      flex-direction: column;
+    }
+  }
+
+
+  //Display of recent file cards---------------------------
+  &_files {
+    display: grid;
+    gap: 16px;
+    color: var(--secondary_font);
+
+    &_header {
+      display: grid;
+      grid-template-columns: 50% 23% 23% 4%;
+
+      font-size: clamp(12px, 1vw, 16px);
+
+      @media (max-width: 1000px) {
+        grid-template-columns: 45% 25% 25% 10%;
+      }
+    }
+  }
+}

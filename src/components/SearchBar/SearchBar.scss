@@ -1,0 +1,33 @@
+@use "../../styles/global" as *;
+
+//Component container
+.searchbar {
+  width: 100%;
+  position: relative;
+  
+  //Magnifying glass
+  &_icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+    color: #bcbeca;
+    pointer-events: none;
+  }
+
+  //Main input
+  &_input {
+    width: 100%;
+    height: clamp(29px, 5vh, 40px);
+    padding: 0 3rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+  background-color: var(--card);
+
+    &::placeholder {
+      color: #bcbeca;
+    }
+  }
+
+}

@@ -1,0 +1,26 @@
+@use "../../styles/global" as *;
+
+//Component container--------------------------------------
+.theme {
+  display: flex;
+  border: none;
+  background-color: transparent;
+
+  //Icons-------------
+  .icon_moon {
+    color: var(--secondary_font);
+    font-size: 22px;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .icon_sun {
+    color: var(--secondary_font);
+    font-size: 22px;
+    &:hover {
+      color: white;
+    }
+  }
+}
