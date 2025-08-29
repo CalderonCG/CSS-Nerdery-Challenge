@@ -10,10 +10,17 @@
   .icon_moon {
     color: var(--secondary_font);
     font-size: 22px;
+
+    &:hover {
+      color: white;
+    }
   }
 
   .icon_sun {
     color: var(--secondary_font);
     font-size: 22px;
+    &:hover {
+      color: white;
+    }
   }
 }

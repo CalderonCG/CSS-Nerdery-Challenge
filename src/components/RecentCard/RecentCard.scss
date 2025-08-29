@@ -7,7 +7,7 @@
   background-color: var(--card);
   border-radius: 10px;
   display: grid;
-  grid-template-columns: 50% 23% 23% 4%; //Divides itself to fit header grid 
+  grid-template-columns: 50% 23% 23% 4%; //Divides itself to fit header grid
   align-items: center;
   font-size: clamp(12px, 1vw, 16px);
 
@@ -36,6 +36,12 @@
       @media (max-width: 434px) {
         display: none;
       }
+    }
+  }
+
+  &_icon {
+    &:hover {
+      color: var(--font);
     }
   }
 }

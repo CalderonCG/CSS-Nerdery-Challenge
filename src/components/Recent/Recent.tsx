@@ -1,4 +1,4 @@
-import { FaClock } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import SearchBar from "../SearchBar/SearchBar";
 import "./Recent.scss";
 import UsedCard from "../UsedCard/UsedCard";
@@ -14,8 +14,8 @@ function Recent() {
       <div className="recent_header">
         <h1>Recently Used</h1>
         <div className="recent_header_icons">
-          <FaClock />
-          <FaClock className="recent_header_icon" />
+          <FaChevronLeft />
+          <FaChevronRight className="recent_header_icon" />
         </div>
       </div>
 

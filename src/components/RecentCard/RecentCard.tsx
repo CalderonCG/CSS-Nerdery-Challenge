@@ -24,7 +24,7 @@ function RecentCard({name, members, date, color} : RecentCardProps) {
         <p>{members} members</p>
         <p>{date}</p>
 
-        <FaEllipsisH/>
+        <FaEllipsisH className='recent_card_icon'/>
     </div>
   )
 }

@@ -7,10 +7,11 @@
   background-color: var(--card);
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(58, 58, 58, 0.07);
-  padding: 12px 16px;
+  padding: 16px 16px;
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 8px;
   justify-content: space-between;
   @media (max-width: 1000px) {
     width: 45%;
@@ -37,11 +38,12 @@
     @media (max-width: 434px) {
       flex-direction: row-reverse;
       width: auto;
+      height: 100%;
       gap: 10px;
     }
     &_square {
       background-color: var(--primary);
-      width: clamp(35px, 3vw, 50px);
+      width: clamp(30px, 3vw, 50px);
       aspect-ratio: 1.13 / 1;
     }
   }
@@ -67,7 +69,7 @@
       }
     }
     p {
-      font-size: clamp(8px, 1vw, 16px);
+      font-size: clamp(8px, 1vw - 1px, 16px);
       font-weight: 400;
       color: var(--secondary_font);
 

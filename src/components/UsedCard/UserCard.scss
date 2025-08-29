@@ -1,25 +1,23 @@
 @use "../../styles/global" as *;
 
-
 //Component container----------------------------
 .used {
   width: clamp(159px, 30%, 280px);
   aspect-ratio: 1/0.84;
-
   background-color: var(--card);
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(58, 58, 58, 0.07);
-  padding: clamp(24px, 2vw, 32px) 16px;
+  padding: clamp(22px, 2vw, 32px) 16px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   @media (max-width: 1000px) {
     width: 45%;
     max-width: 159px;
   }
-  
+
   //On mobile screens changes layout
   @media (max-width: 434px) {
     width: 100%;
@@ -37,8 +35,12 @@
     top: 16px;
     right: 16px;
     color: var(--secondary_font);
-    @media (max-width: 1000px) {
+    @media (max-width: 434px) {
       display: none;
+    }
+
+    &:hover {
+      color: var(--font);
     }
   }
 
@@ -49,11 +51,15 @@
     right: 16px;
     color: var(--secondary_font);
     opacity: 50%;
-    @media (max-width: 1000px) {
+    @media (max-width: 434px) {
       display: block;
     }
-  }
 
+    &:hover {
+      color: var(--font);
+      opacity: 100%;
+    }
+  }
 
   //Square and circles-----------------------------
   &_icons {
@@ -75,15 +81,15 @@
 
       &_main {
         background-color: var(--primary);
-        width: clamp(35px, 3vw, 50px);
+        width: clamp(30px, 3vw, 50px);
         aspect-ratio: 1.13 / 1;
-        margin-left: 8px;
+        margin-left: clamp(5px, 1vw - 0.5rem, 8px);
       }
       &_back {
         background-color: var(--primary_light);
-        width: clamp(35px, 3vw, 50px);
+        width: clamp(30px, 3vw, 50px);
         aspect-ratio: 1.13 / 1;
-        margin-top: 8px;
+        margin-top: clamp(5px, 1vw - 0.5rem, 8px);
       }
     }
   }
@@ -109,7 +115,7 @@
       }
     }
     p {
-      font-size: clamp(8px, 1vw, 16px);
+      font-size: clamp(8px, 1vw - 1px, 16px);
       font-weight: 400;
       color: var(--secondary_font);
 
