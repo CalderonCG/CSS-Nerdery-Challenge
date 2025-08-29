@@ -19,6 +19,7 @@
     justify-content: center;
 
     @media (max-width: 1000px) {
+      height: 20px;
       font-size: 8px;
     }
     &:first-child {

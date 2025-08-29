@@ -5,6 +5,8 @@
   display: flex;
   gap: 22px;
   overflow-y: hidden;
+  overflow-x:hidden;
+  position: relative;
 
   @media (max-width: 1000px) {
     display: flex;

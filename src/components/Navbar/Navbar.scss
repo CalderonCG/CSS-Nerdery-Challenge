@@ -12,13 +12,15 @@
   font-size: clamp(10px, 1vw, 16px);
 
   @media (max-width: 1000px) {
-    display: none;
+    visibility: hidden;
     position: absolute;
     z-index: 100;
     font-size: 16px;
     width: 80%;
-
     max-width: 350px;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, visibility 0.3s;
   }
 
   //Nameplate at the top-------------------------------------
@@ -219,7 +221,9 @@
   }
 
   &_display {
-    display: flex;
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.3s ease, visibility 0.3s;
   }
 }
 
