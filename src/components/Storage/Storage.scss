@@ -12,7 +12,8 @@
     right: 0;
     z-index: 100;
     font-size: 16px;
-    width: 100%;
+    width: 80%;
+    max-width: 350px;
   }
 
   &_header {
@@ -67,6 +68,8 @@
     gap: 24px;
     overflow-y: auto;
     flex: 1 1 auto;
+    scrollbar-color: var(--secondary_font) var(--section);
+    scrollbar-width: thin;
 
     @media (max-width: 1000px) {
       padding: 24px 36px;

@@ -11,6 +11,9 @@
   flex-direction: column;
   gap: 25px;
 
+    scrollbar-color: var(--secondary_font) var(--section);
+  scrollbar-width: thin;
+
   &_header {
     width: 100%;
     display: flex;
@@ -43,6 +46,10 @@
     gap: 1rem;
 
     @media (max-width: 1000px) {
+      flex-wrap: wrap;
+    }
+
+        @media (max-width: 434px) {
       flex-direction: column;
     }
   }
