@@ -10,15 +10,17 @@ import {
   FaHome,
   FaPlus,
   FaShareAlt,
+  FaTimes,
   FaTrash,
   FaUpload,
 } from "react-icons/fa";
 
 type NavbarProps = {
   show: boolean;
+  handleClose: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function Navbar({ show }: NavbarProps) {
+function Navbar({ show, handleClose }: NavbarProps) {
   return (
     <div
       className={clsx("navbar", {
@@ -27,6 +29,7 @@ function Navbar({ show }: NavbarProps) {
     >
       <div className="navbar_header">
         <div className="navbar_header_nameplate" />
+        <FaTimes className="navbar_header_close" onClick={()=>handleClose(false)}/>
       </div>
       <div className="navbar_navigation">
         <span className="navbar_navigation_option">

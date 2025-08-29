@@ -16,7 +16,7 @@
     position: absolute;
     z-index: 100;
     font-size: 16px;
-    width: 60%;
+    width: 100%;
   }
 
   //Nameplate at the top-------------------------------------
@@ -26,11 +26,26 @@
     height: clamp(21px, 8%, 30px);
     padding: 0 32px;
 
+      @media (max-width: 1000px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
     &_nameplate {
       width: clamp(74px, 80%, 100px);
       height: 100%;
       border-radius: 5px;
       background: linear-gradient(90deg, #ff9f00, #ff6860, #689ef8);
+    }
+
+    &_close {
+      display: none;
+      @media (max-width: 1000px) {
+        display: flex;
+        font-size: 24px;
+        color: var(--secondary_font);
+      }
     }
   }
 
@@ -51,6 +66,10 @@
       height: 44px;
       gap: clamp(10px, 1vw, 19px);
       cursor: pointer;
+
+      @media (max-width: 1000px) {
+        gap: 32px;
+      }
       &:hover &_border {
         display: block;
       }
@@ -119,7 +138,7 @@
     border-radius: 9px;
 
     @media (max-width: 1000px) {
-      padding: 16px;;
+      padding: 16px;
     }
 
     //Menu card

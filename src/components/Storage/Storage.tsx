@@ -1,4 +1,4 @@
-import { FaCog, FaRegUserCircle, FaSignOutAlt } from "react-icons/fa";
+import { FaCog, FaRegUserCircle, FaSignOutAlt, FaTimes } from "react-icons/fa";
 import "./Storage.scss";
 import Chart from "../Chart/Chart";
 import FileTypeCard from "../FileTypeCard/FileTypeCard";
@@ -12,6 +12,7 @@ export type DataType = {
 
 type StorageProps = {
   show: boolean;
+  handleClose: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const data: DataType[] = [
@@ -21,7 +22,7 @@ const data: DataType[] = [
   { name: "Available", value: 50 },
 ];
 
-function Storage({ show}: StorageProps) {
+function Storage({ show, handleClose }: StorageProps) {
   return (
     <div
       className={clsx("storage", {
@@ -30,6 +31,10 @@ function Storage({ show}: StorageProps) {
     >
       <div className="storage_header">
         <div className="storage_header_options">
+          <FaTimes
+            className="storage_header_options_close"
+            onClick={() => handleClose(false)}
+          />
           <FaSignOutAlt className="storage_header_options_icon" />
           <FaCog className="storage_header_options_icon" />
         </div>

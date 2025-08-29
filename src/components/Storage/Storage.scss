@@ -12,7 +12,7 @@
     right: 0;
     z-index: 100;
     font-size: 16px;
-    width: 60%;
+    width: 100%;
   }
 
   &_header {
@@ -31,6 +31,17 @@
       align-items: center;
       gap: 10px;
       font-size: 20px;
+      color: var(--font);
+      @media (max-width: 1000px) {
+        font-size: 24px;
+        gap: 16px;
+      }
+      &_close {
+        display: none;
+        @media (max-width: 1000px) {
+          display: flex;
+        }
+      }
     }
 
     &_avatar {
@@ -56,7 +67,8 @@
     flex: 1 1 auto;
 
     @media (max-width: 1000px) {
-      padding: 24px 16px;
+      padding: 24px 36px;
+      
     }
 
     &_title {

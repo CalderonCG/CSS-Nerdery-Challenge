@@ -17,6 +17,10 @@
         align-items: center;
         justify-content: center;
 
+
+        @media (max-width: 1000px) {
+          font-size: 8px;
+        }
     &:first-child {
       margin-left: 0px;
     }

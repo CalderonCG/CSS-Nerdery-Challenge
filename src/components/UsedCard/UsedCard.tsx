@@ -1,4 +1,4 @@
-import { FaEllipsisV } from "react-icons/fa";
+import { FaEllipsisH, FaEllipsisV } from "react-icons/fa";
 import UsedCircles from "../UsedCircles/UsedCircles";
 import "./UserCard.scss";
 
@@ -12,7 +12,8 @@ type UsedCardProps = {
 function UsedCard({name, date, amount, label}: UsedCardProps) {
   return (
     <div className="used">
-        <FaEllipsisV className="used_options"/>
+        <FaEllipsisV className="used_options_v"/>
+        <FaEllipsisH className="used_options_h"/>
       <div className="used_icons">
         <div className="used_icons_squares">
           <div className="used_icons_squares_back" />

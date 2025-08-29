@@ -8,7 +8,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 12px;
+    left: 1rem;
     color: #bcbeca;
     pointer-events: none;
   }
@@ -16,7 +16,7 @@
   &_input {
     width: 100%;
     height: clamp(29px, 5vh, 40px);
-    padding: 0 2rem;
+    padding: 0 3rem;
     border: none;
     outline: none;
     border-radius: 10px;
