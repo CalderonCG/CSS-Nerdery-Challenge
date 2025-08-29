@@ -11,7 +11,11 @@
   flex-direction: column;
   gap: 25px;
 
-    scrollbar-color: var(--secondary_font) var(--section);
+  @media (max-width: 434px) {
+    padding-top: 0;
+  }
+
+  scrollbar-color: var(--secondary_font) var(--section);
   scrollbar-width: thin;
 
   &_header {
@@ -49,7 +53,7 @@
       flex-wrap: wrap;
     }
 
-        @media (max-width: 434px) {
+    @media (max-width: 434px) {
       flex-direction: column;
     }
   }
@@ -66,8 +70,7 @@
       font-size: clamp(12px, 1vw, 16px);
 
       @media (max-width: 1000px) {
-        
-      grid-template-columns: 45% 25% 25% 10%;
+        grid-template-columns: 45% 25% 25% 10%;
       }
     }
   }
