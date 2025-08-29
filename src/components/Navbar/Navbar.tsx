@@ -16,10 +16,9 @@ import {
 
 type NavbarProps = {
   show: boolean;
-  handleClose: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function Navbar({ show, handleClose }: NavbarProps) {
+function Navbar({ show }: NavbarProps) {
   return (
     <div
       className={clsx("navbar", {

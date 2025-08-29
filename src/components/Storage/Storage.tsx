@@ -12,7 +12,6 @@ export type DataType = {
 
 type StorageProps = {
   show: boolean;
-  handleClose: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const data: DataType[] = [
@@ -22,7 +21,7 @@ const data: DataType[] = [
   { name: "Available", value: 50 },
 ];
 
-function Storage({ show, handleClose }: StorageProps) {
+function Storage({ show}: StorageProps) {
   return (
     <div
       className={clsx("storage", {

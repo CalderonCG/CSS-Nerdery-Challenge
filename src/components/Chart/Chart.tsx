@@ -1,24 +1,28 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import type { PieArcDatum } from "d3-shape";
 import "./Chart.scss";
 import type { DataType } from "../Storage/Storage";
 
-
-
 type ChartProps = {
-  data: DataType[]
-}
+  data: DataType[];
+};
 
-function Chart({data}: ChartProps) {
-  //Chart setup--------------------------------------------------------------------------------------------
+function Chart({ data }: ChartProps) {
   const chartRef = useRef<SVGSVGElement | null>(null); // Reference for chart
 
   useEffect(() => {
+    if (!chartRef.current) return;
+
     //svg container
     const w = 175;
     const h = 175;
     const radius = w / 2;
     const innerRadius = radius - 10;
+
+    // Limpieza previa → evita que se duplique el gráfico en cada render
+    d3.select(chartRef.current).selectAll("*").remove();
+
     const svg = d3.select(chartRef.current).attr("width", w).attr("height", h);
 
     //center svg
@@ -27,20 +31,21 @@ function Chart({data}: ChartProps) {
       .attr("transform", `translate(${w / 2}, ${h / 2})`);
 
     //generating chart
-    const chartData = d3.pie().value((d: DataType) => d.value)(data);
+    const chartData = d3.pie<DataType>().value((d) => d.value)(data);
+
     const chartArc = d3
-      .arc()
+      .arc<PieArcDatum<DataType>>()
       .cornerRadius(10)
       .padAngle(0.1)
       .innerRadius(innerRadius)
       .outerRadius(radius);
 
     //mapping svg
-    g.selectAll()
+    g.selectAll("path")
       .data(chartData)
       .join("path")
-      .attr("d", chartArc)
-      .attr("fill", (d) =>
+      .attr("d", (d: PieArcDatum<DataType>) => chartArc(d)!) 
+      .attr("fill", (d: PieArcDatum<DataType>) =>
         d.data.name === "Documents"
           ? "#FF9F00"
           : d.data.name === "Videos"
@@ -60,7 +65,6 @@ function Chart({data}: ChartProps) {
         </p>
         <p className="chart_used_label">Used</p>
       </div>
-
     </div>
   );
 }

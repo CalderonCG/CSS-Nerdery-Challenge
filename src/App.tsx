@@ -23,9 +23,9 @@ function App() {
 
         {(showSidebar || showStorage) && <div className="backdrop" onClick={()=>handleClose()}/>}
       </div>
-      <Navbar show={showSidebar} handleClose={setShowSidebar} />
+      <Navbar show={showSidebar}  />
       <Recent />
-      <Storage show={showStorage} handleClose={setShowStorage} />
+      <Storage show={showStorage}  />
     </div>
   );
 }
