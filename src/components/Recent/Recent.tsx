@@ -61,19 +61,19 @@ function Recent() {
 
       <div className="recent_used">
         <SharedCard
-          name="App Project"
+          name="Landing Page"
           date="20.02.2020"
           amount={["green", "red"]}
         />
 
         <SharedCard
-          name="App Project"
+          name="Illustration Pack"
           date="20.02.2020"
           amount={["green", "red", "yellow"]}
         />
 
         <SharedCard
-          name="App Project"
+          name="CV Design"
           date="20.02.2020"
           amount={["green", "yellow"]}
         />

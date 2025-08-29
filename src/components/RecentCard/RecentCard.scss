@@ -10,27 +10,38 @@
   align-items: center;
   font-size: clamp(12px, 1vw, 16px);
 
-  &_name{
+  @media (max-width: 1000px) {
+    grid-template-columns: 45% 25% 25% 10%;
+    padding: 0 5px;
+  }
+  &_name {
     padding: 0 16px;
     display: flex;
     align-items: center;
     gap: 10px;
     color: var(--font);
 
-    &_square{
-        height: clamp(21px, 3vh, 30px);
-        aspect-ratio: 1/1;
-        border-radius: 5px;
-        background-color: var(--primary);
+    @media (max-width: 1000px) {
+      padding: 0;
+    }
+
+    &_square {
+      height: clamp(21px, 3vh, 30px);
+      aspect-ratio: 1/1;
+      border-radius: 5px;
+      background-color: var(--primary);
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
     }
   }
 }
 
-
-.recent_red{
-  background-color: #FF6860;
+.recent_red {
+  background-color: #ff6860;
 }
 
-.recent_green{
-  background-color: #4AC29D;
+.recent_green {
+  background-color: #4ac29d;
 }

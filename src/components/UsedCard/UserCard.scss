@@ -6,13 +6,22 @@
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(58, 58, 58, 0.07);
-  padding: clamp(24px,2vw, 32px) 16px;
+  padding: clamp(24px, 2vw, 32px) 16px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  &_options{
+
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: 128px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  &_options {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -26,41 +35,59 @@
     align-items: center;
     gap: clamp(10px, 1vw, 24px);
 
+    @media (max-width: 1000px) {
+      flex-direction: row-reverse;
+      width: auto;
+    }
+
     &_squares {
       display: grid;
       grid-auto-flow: column;
       grid-template-columns: 1px;
+
       &_main {
         background-color: var(--primary);
-        width: clamp(35px, 3vw, 50px);;
+        width: clamp(35px, 3vw, 50px);
         aspect-ratio: 1.13 / 1;
         margin-left: 8px;
       }
       &_back {
         background-color: var(--primary_light);
-        width: clamp(35px, 3vw, 50px);;
+        width: clamp(35px, 3vw, 50px);
         aspect-ratio: 1.13 / 1;
 
         margin-top: 8px;
       }
     }
-
-  
   }
 
   &_data {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: clamp(4px, 1vw - 1rem, 8px);
+
+    @media (max-width: 1000px) {
+      height: 100%;
+      justify-content: center;
+      gap: 8px;
+    }
     h1 {
-      font-size: clamp(12px, 2vw - 0.5rem,20px);
+      font-size: clamp(12px, 2vw - 0.5rem, 20px);
       font-weight: 400;
       color: var(--font);
+
+      @media (max-width: 1000px) {
+        font-size: 16px;
+      }
     }
     p {
-      
-      font-size: clamp(8px, 1vw,16px);
+      font-size: clamp(8px, 1vw, 16px);
       font-weight: 400;
       color: var(--secondary_font);
+
+      @media (max-width: 1000px) {
+        font-size: 12px;
+      }
     }
   }
 }
